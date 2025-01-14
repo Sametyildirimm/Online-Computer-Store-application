@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ShopPage"
+             Title="ShopPage">
+
+    <StackLayout BackgroundColor="Red">
+        <StackLayout  BackgroundColor="White" Margin="10,0, 10,10">
+            <Label Text="Memory Size GB" TextColor="Black" HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="MemBtnMin" Text="-" TextColor="Black" Grid.Column="0" WidthRequest="50" HorizontalOptions="End" Clicked="MemBtnMin_Clicked"/>
+                <Border Grid.Column="1" WidthRequest="50"/>
+                <Label x:Name="lbMem" Text="0" TextColor="Black" Grid.Column="1" WidthRequest="45" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Button x:Name="MemBtnMax" Text="+" TextColor="Black" Grid.Column="2" HorizontalOptions="Start" Clicked="MemBtnMax_Clicked"/>
+            </Grid>
+
+            <Label Text="Storage Size GB" TextColor="Black" HorizontalOptions="Center" Margin="0,20,0,0"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="StrBtnMin" Text="-" TextColor="Black" Grid.Column="0" WidthRequest="50" HorizontalOptions="End" Clicked="StrBtnMin_Clicked"/>
+                <Border Grid.Column="1" WidthRequest="50"/>
+                <Label x:Name="lbStr" Text="0" TextColor="Black" Grid.Column="1" WidthRequest="45" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Button x:Name="StrBtnMax" Text="+" TextColor="Black" Grid.Column="2" HorizontalOptions="Start" Clicked="StrBtnMax_Clicked"/>
+            </Grid>
+
+            <Label Text="Monitor Size in" TextColor="Black" HorizontalOptions="Center" Margin="0,20,0,0"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="MonBtnMin" Text="-" TextColor="Black" Grid.Column="0" WidthRequest="50" HorizontalOptions="End" Clicked="MonBtnMin_Clicked"/>
+                <Border Grid.Column="1" WidthRequest="50"/>
+                <Label x:Name="lbMon" Text="0" TextColor="Black" Grid.Column="1" WidthRequest="45" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Button x:Name="MonBtnMax" Text="+" TextColor="Black" Grid.Column="2" HorizontalOptions="Start" Clicked="MonBtnMax_Clicked"/>
+            </Grid>
+
+            <Label x:Name="lbTotal" Text="Total: 0" TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="10"/>
+        </StackLayout>
+        <ListView x:Name="Usr_List_View" Margin="175,0,0,0" HorizontalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label  Text="{Binding Name}" TextColor="White"/>
+                            <Label Text="____________________" TextColor="Red"/>
+                            <Label Text="{Binding ID}" TextColor="White"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

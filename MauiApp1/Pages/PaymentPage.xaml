@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.PaymentPage"
+             Title="PaymentPage">
+
+    <StackLayout BackgroundColor="Red">
+        <StackLayout BackgroundColor="White" Margin="10,0, 10,10">
+            <Label Text="Cardholder Name" TextColor="Black" Margin="10"/>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border/>
+                <Entry/>
+            </Grid>
+            
+            <Label Text="Card No." TextColor="Black" Margin="10,10,0,0"/>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border/>
+                <Entry/>
+            </Grid>
+
+            <Grid ColumnSpacing="250" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Date" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"/>
+                <Border Grid.Row="1" Grid.Column="0"/>
+                <Entry Grid.Row="1" Grid.Column="0"/>
+
+                <Label Text="CVV" TextColor="Black" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+                <Border Grid.Row="1" Grid.Column="1"/>
+                <Entry Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+            <RadioButton Content="Cache" TextColor="Black" Margin="10"/>
+            <RadioButton Content="Installments" TextColor="Black" Margin="10,0,0,0"/>
+
+            <Label x:Name="lbTotal" Text="Total: 0" TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" Margin="10"/>
+
+            <Button Text="Pay" TextColor="White" BackgroundColor="Red" BorderColor="Black" BorderWidth="2" HorizontalOptions="Center" Margin="10" WidthRequest="100"/>
+
+        </StackLayout>
+        <ListView x:Name="Usr_List_View" Margin="175,0,0,0" HorizontalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label  Text="{Binding Name}" TextColor="White"/>
+                            <Label Text="____________________" TextColor="Red"/>
+                            <Label Text="{Binding ID}" TextColor="White"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiApp1">
+
+
+    <TabBar>
+        <Tab Title="Home" Icon="home_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Title="Store" Icon="store_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:StorePage}"/>
+        </Tab>
+        <Tab Title="Shop" Icon="shop_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:ShopPage}"/>
+        </Tab>
+        <Tab Title="Payment" Icon="payment_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:PaymentPage}"/>
+        </Tab>
+    </TabBar>
+
+</Shell>
